@@ -42,12 +42,34 @@ def lengthOfLongestSubstring(s):
 def max_substring_count(s):
     dict = {}
     max_val = 0
-    
+    prev_index = 0
+    cur_count = 0
+
+    for index, chr in enumerate(s):
+        # check if the current letter is in the dictionary and
+
+        if chr in dict and dict[chr] >= cur_count:
+            max_val = max(max_val, count)
+            # print('max val => ', max_val)
+
+            prev_index = index - dict[chr]
+            # print('count => ', count)
+
+            cur_count = dict[chr] + 1
+            # print('current count => ', cur_count)
+        else:
+            prev_index += 1
+
+        # dict[chr] = index
+        # print(max_val, count)
+        # print(dict)
+
 
 
 def main():
     text = "pwwkew"
-    print(lengthOfLongestSubstring(text))
+    print(max_substring_count(text))
+    # print(lengthOfLongestSubstring(text))
 
 
 
