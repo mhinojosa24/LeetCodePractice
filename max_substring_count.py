@@ -46,7 +46,10 @@ def max_substring_count(s):
     cur_count = 0
 
     for index, chr in enumerate(s):
-        # check if the current letter is in the dictionary and
+        '''
+        check if the current letter is an existing key in the dictionary and
+
+        '''
 
         if chr in dict and dict[chr] >= cur_count:
             max_val = max(max_val, count)
@@ -60,7 +63,7 @@ def max_substring_count(s):
         else:
             prev_index += 1
 
-        # dict[chr] = index
+        dict[chr] = index
         # print(max_val, count)
         # print(dict)
 

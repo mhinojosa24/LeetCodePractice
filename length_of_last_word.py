@@ -1,8 +1,11 @@
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
+
         word = ''
         size = 0
-
+        # A BOOLEAN THAT IS SET TO TRUE WHEN WE SEE THE FIRST LETTER
+        isWord = False
+        counter = 0
         if len(s) == 0 or s == ' ':
             return 0
         if len(s) == 1:
@@ -11,10 +14,20 @@ class Solution:
         for i in range(len(s) - 1, -1, -1):
             chr = s[i]
 
-            if chr.isspace() == True and s:
-                continue
-            elif chr.isalpha() == True:
-                size += 1
+            # CHECKING IF VALID LETTER AND WE HAVENT SEEN A LETTER YET
+            # if chr.isalpha() == True and isWord == False:
+            #     counter += 1
+            # else:
+            #     isWord = True
 
-            print(chr.isspace())
-            print(chr.isalpha())
+            if chr.isalpha() == False and isWord == False:
+                continue
+
+            elif chr.isalpha():
+                isWord = True
+                counter += 1
+
+            else:
+                return counter
+
+        return counter
