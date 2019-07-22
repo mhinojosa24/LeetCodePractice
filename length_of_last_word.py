@@ -26,8 +26,3 @@ class Solution:
             elif chr.isalpha():
                 isWord = True
                 counter += 1
-
-            else:
-                return counter
-
-        return counter

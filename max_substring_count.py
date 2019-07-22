@@ -25,6 +25,7 @@ def lengthOfLongestSubstring(s: str) -> int:
 
     return max_sub_count
 
+
 def lengthOfLongestSubstring(s):
         d,m,c,st={},0,0,0
         for i, e in enumerate(s):
