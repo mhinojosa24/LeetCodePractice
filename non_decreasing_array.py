@@ -1,38 +1,31 @@
 # class Solution:
 def checkPossibility(nums):
-    isDecending = True
+    isChanged = False
 
 
 
     if len(nums) == 0 or len(nums) == 1:
         return True
 
-    for i in range(0, len(nums)):
-        # print(i + 1)
-        if (i + 1 > len(nums) - 1) == False:
-            # print('hi')
-            if nums[i] >= nums[i + 1]:
-                next_num = nums[i + 1]
-                new_num = ((nums[i] - next_num) - 1)
+    for i in range(0, len(nums) - 1):
 
-                if new_num == 0:
-                    new_num = 1
-
-                if (new_num < next_num) == False:
-                    print('here')
-                    nums[i + 1] = nums[i] + next_num
-                    print(nums[i + 1])
-
-                # print(isDecending)
-                if 1 <= new_num < next_num and isDecending == True:
-                    print('here')
-                    isDecending = False
-                    print(isDecending)
-
+        if nums[i] > nums[i + 1]:
+            if isChanged == True:
                 return False
-    else:
-        if isDecending == True:
-            return True
 
+            elif i == 0 or nums[i - 1] < nums[i + 1]:
+                print('here')
+                nums[i] = nums[i + 1]
+                # print(nums[i])
+            else:
+                nums[i + 1] = nums[i]
+            isChanged = True
+
+    return True
+
+l = [-1,4,2,3]
+l2 = [4,2,3]
 list = [4,2,1]
-print(checkPossibility(list))
+print('correct: True, result: ', checkPossibility(l))
+print('correct: True, result: ', checkPossibility(l2))
+print('correct: False, result: ', checkPossibility(list))
