@@ -10,7 +10,7 @@ def convertToNum(numStr: str) -> int:
     return result
 
 def addStrings(num1: str, num2: str) -> str:
-    numstr = '{}'.format((convertToNum(num1) + convertToNum(num2)))
+    numstr = '{}'.format((convertToNum(num1) * convertToNum(num2)))
     return numstr
 
 
@@ -19,4 +19,4 @@ if __name__ == '__main__':
     num1 = '12'
     num2 = '12'
     result = addStrings(num1, num2)
-    print("result: {}, expected: {}".format(result, '24'))
+    print("result: {}, expected: {}".format(result, '144'))

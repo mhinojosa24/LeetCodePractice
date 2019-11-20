@@ -1,4 +1,4 @@
-def addToarrayForm(a: [int], k: int):
+def addToArrayForm(a: [int], k: int):
 
     a[-1] += k
 
